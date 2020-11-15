@@ -23,7 +23,19 @@
 	<button type="submit" class="btn btn-success" style="margin-top:3%";>Oblicz</button>
 </div>
 </form>	
-
+    
+    <h1> kalkulator kredytowy </h1>
+<form action="<?php print(_APP_URL);?>/app/calc2.php" method="post">
+<div class="md-form form-group w-25">
+<span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:2%";>Kwota:
+	<input id="id_x" type="text" name="kwota" value="" /><br /></span>
+<span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:1%"; style="width:15%";>Jakie oprocentowanie:
+	<input id="id_y" type="text" name="oprocentowanie" value="<?php  if (isset($oprocentowanie)) print($oprocentowanie); ?>" /><br /></span>
+<span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:1%"; style="width:15%";>Ile lat:
+	<input id="id_z" type="text" name="lata" value="<?php if (isset($lata)) print($lata); ?>" /><br /></span>
+	<button type="submit" class="btn btn-success" style="margin-top:3%";>Oblicz</button>
+</div>
+</form>	
 <?php
 //wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
@@ -41,7 +53,7 @@ if (isset($messages)) {
 <div class="md-form form-group w-50">
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
 
-<?php echo 'Wynik: '.$result; ?>
+<?php echo 'wynik: '.$result;  ?>
 </div>
 <?php } ?>
 
