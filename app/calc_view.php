@@ -1,38 +1,27 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <meta charset="utf-8" />
 <title>Kalkulator</title>
 </head>
 <body style="background-color:#F6F6F6";>
-
-<form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
-<div class="md-form form-group w-25">
-<span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:2%";>Liczba 1:
-	<input id="id_x" type="text" name="x" value="<?php  if (isset($x)) print($x); ?>" /><br /></span>
-	<label for="id_op">Operacja: </label>
-	<select name="op">
-		<option value="plus">+</option>
-		<option value="minus">-</option>
-		<option value="times">*</option>
-		<option value="div">/</option>
-	</select><br />
-<span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:1%"; style="width:15%";>Liczba 2:
-	<input id="id_y" type="text" name="y" value="<?php if (isset($y)) print($y); ?>" /><br /></span>
-	<button type="submit" class="btn btn-success" style="margin-top:3%";>Oblicz</button>
+    
+<div style="width:90%; margin: 2em auto;">
+	<a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php" class="pure-button">kolejna chroniona strona</a>
+	<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
 </div>
-</form>	
     
     <h1> kalkulator kredytowy </h1>
 <form action="<?php print(_APP_URL);?>/app/calc2.php" method="post">
 <div class="md-form form-group w-25">
 <span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:2%";>Kwota:
-	<input id="id_x" type="text" name="kwota" value="" /><br /></span>
+	<input id="id_x" type="text" name="kwota" value="<?php out($kwota); ?>" /><br /></span>
 <span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:1%"; style="width:15%";>Jakie oprocentowanie:
-	<input id="id_y" type="text" name="oprocentowanie" value="<?php  if (isset($oprocentowanie)) print($oprocentowanie); ?>" /><br /></span>
+	<input id="id_y" type="text" name="oprocentowanie" value="<?php  out($oprocentowanie); ?>" /><br /></span>
 <span class="input-group-text" id="inputGroup-sizing-sm" style="margin-top:1%"; style="width:15%";>Ile lat:
-	<input id="id_z" type="text" name="lata" value="<?php if (isset($lata)) print($lata); ?>" /><br /></span>
+	<input id="id_z" type="text" name="lata" value="<?php out($lata); ?>" /><br /></span>
 	<button type="submit" class="btn btn-success" style="margin-top:3%";>Oblicz</button>
 </div>
 </form>	
